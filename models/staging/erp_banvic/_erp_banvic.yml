@@ -5,3 +5,6 @@ sources:
     tables:
       - name: localidades
         description: Tabela fonte de localidades contendo informações de cidades e estados.
+
+      - name: clientes
+        description: Tabela fonte de clientes contendo informações pessoais de cada cliente da Banvic.
