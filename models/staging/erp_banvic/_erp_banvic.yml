@@ -14,3 +14,6 @@ sources:
 
       - name: colaboradores
         description: Tabela fonte de colaborades contendo informações de cada colaborador da Banvic.
+
+      - name: contas
+        description: Tabela fonte de contas contendo informações de cada conta na Banvic.
