@@ -1,0 +1,22 @@
+models:
+  - name: stg_erp__contas
+    description: Modelo de staging de contas.
+    columns:
+      - name: pk_conta
+        description: Chave primária da tabela contas.
+      - name: fk_cliente
+        description: Chave estrangeira para tabela clientes.
+      - name: fk_agencia
+        description: Chave estrangeira para tabela agencias.
+      - name: fk_colaborador
+        description: Chave estrangeira para tabela colaborador.
+      - name: tipo_conta
+        description: Tipo da conta, pessoa física ou jurídica.
+      - name: ts_abertura
+        description: Timestamp da abertura da conta.
+      - name: saldo_total
+        description: Saldo total da conta.
+      - name: saldo_disponivel
+        description: Saldo disponível na conta.
+      - name: ts_ultimo_lancamento
+        description: Timestamp da última movimentação da conta.
