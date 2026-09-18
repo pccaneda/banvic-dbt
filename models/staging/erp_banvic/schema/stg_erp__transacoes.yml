@@ -17,7 +17,6 @@ models:
         data_tests:
           - accepted_values:
               arguments:
-                - "Débito"
-                - "Crédito"
+                values: ['Crédito', 'Débito']
       - name: valor_transacao
         description: Valor monetário da transação.
