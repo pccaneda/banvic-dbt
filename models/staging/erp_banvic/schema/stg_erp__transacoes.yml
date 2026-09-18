@@ -1,0 +1,23 @@
+models:
+  - name: stg_erp__transacoes
+    description: Modelo de staging para transações.
+    columns:
+      - name: pk_transacao
+        description: Chave primária da tabela transacoes.
+      - name: fk_conta
+        description: Chave estrangeira para tabela agencias.
+      - name: data_transacao
+        description: Data de ocorrência da transação.
+      - name: ts_transacao
+        description: Timestamp de ocorrência da transação.
+      - name: nome_transacao
+        description: Nome da transação no sistema.
+      - name: tipo_transacao
+        description: "Tipo da transação: Débito ou Crédito."
+        data_tests:
+          - accepted_values:
+              arguments:
+                - "Débito"
+                - "Crédito"
+      - name: valor_transacao
+        description: Valor monetário da transação.
