@@ -3,24 +3,6 @@ sources:
     description: Esse é o sistema ERP da Banvic com dados de clientes, colaboradores, contas e transações.
     schema: erp_banvic
     tables:
-      - name: localidades
-        description: Tabela fonte de localidades contendo informações de cidades e estados.
-        columns:
-          - name: cod_localidade
-            description: Chave primária da tabela localidades.
-            data_tests:
-              - unique
-              - not_null
-
-      - name: clientes
-        description: Tabela fonte de clientes contendo informações pessoais de cada cliente da Banvic.
-        columns:              
-          - name: cod_cliente
-            description: Chave primária da tabela clientes.
-            data_tests:
-              - unique
-              - not_null
-
       - name: agencias
         description: Tabela fonte de agências contendo informações de cada agência da Banvic.
         columns:        
@@ -29,6 +11,45 @@ sources:
             data_tests:
               - unique
               - not_null
+          - name: nome
+            description: Nome da agência.
+          - name: endereco
+            description: Endereço da agência.
+          - name: cod_localidade
+            description: Chave estrangeira para a tabela localidades correspondente ao endereço da agência.
+          - name: data_abertura
+            description: Data de abertura da agência.
+          - name: tipo_agencia
+            description: "Tipo de agência: Física ou Digital."
+            
+      - name: clientes
+        description: Tabela fonte de clientes contendo informações pessoais de cada cliente da Banvic.
+        columns:              
+          - name: cod_cliente
+            description: Chave primária da tabela clientes.
+            data_tests:
+              - unique
+              - not_null
+          - name: primeiro_nome
+            description: Primeiro nome do cliente.
+          - name: ultimo_nome
+            description: Último nome do cliente.
+          - name: email
+            description: Email do cliente.
+          - name: tipo_cliente
+            description: Tipo do cliente, pessoa física ou jurídica.
+          - name: data_inclusao
+            description: Data de inclusão do cliente.
+          - name: cpfcnpj
+            description: CPF ou CNPJ do cliente.
+          - name: data_nascimento
+            description: Data de nascimento do cliente.
+          - name: endereco
+            description: Endereço do cliente.
+          - name: cep
+            description: CEP correspondente ao endereço do cliente.
+          - name: cod_localidade
+            description: Chave estrangeira para a tabela localidades correspondente ao endereço do cliente.
 
       - name: colaboradores
         description: Tabela fonte de colaborades contendo informações de cada colaborador da Banvic.
@@ -38,6 +59,24 @@ sources:
             data_tests:
               - unique
               - not_null
+          - name: primeiro_nome
+            description: Primeiro nome do colaborador.
+          - name: ultimo_nome
+            description: Último nome do colaborador.
+          - name: email
+            description: Email do colaborador.
+          - name: cpf
+            description: CPF do colaborador.
+          - name: data_nascimento
+            description: Data de nascimento do colaborador.
+          - name: endereco
+            description: Endereço do colaborador.
+          - name: cep
+            description: CEP correspondente ao endereço do colaborador.
+          - name: cod_localidade
+            description: Chave estrangeira para a tabela localidades correspondente ao endereço do colaborador.
+          - name: cod_gerente
+            description: Código de gerente correspondente ao colaborador.
 
       - name: contas
         description: Tabela fonte de contas contendo informações de cada conta na Banvic.
@@ -47,6 +86,35 @@ sources:
             data_tests:
               - unique
               - not_null
+          - name: cod_cliente
+            description: Chave estrangeira para a tabela clientes correspondente ao cliente titular da conta.
+          - name: cod_agencia
+            description: Chave estrangeira para a tabela agencias correspondente à agência da conta.
+          - name: cod_colaborador
+            description: Chave estrangeira para a tabela colaboradores correspondente ao colaborador associado à conta.
+          - name: tipo_conta
+            description: "Tipo da conta, pessoa física ou jurídica."
+          - name: data_abertura
+            description: Data de abertura da conta.
+          - name: saldo_total
+            description: Saldo total da conta.
+          - name: saldo_disponivel
+            description: Saldo disponível na conta.
+          - name: data_ultimo_lancamento
+            description: Data da última movimentação da conta
+
+      - name: localidades
+        description: Tabela fonte de localidades contendo informações de cidades e estados.
+        columns:
+          - name: cod_localidade
+            description: Chave primária da tabela localidades.
+            data_tests:
+              - unique
+              - not_null
+          - name: cidade
+            description: Cidade correspondente à localidade.
+          - name: uf
+            description: Código UF do estado correspondente à localidade.
 
       - name: transacoes
         description: Tabela fonte de transações contendo informações de cada transação.
@@ -56,3 +124,11 @@ sources:
             data_tests:
               - unique
               - not_null
+          - name: num_conta
+            description: Chave estrangeira para a tabela contas correspondente à conta envolvida na transação.
+          - name: data_transacao
+            description: Data de ocorrência da transação.
+          - name: nome_transacao
+            description: Nome da transação no sistema.
+          - name: valor_transacao
+            description: Valor monetário da transação.
