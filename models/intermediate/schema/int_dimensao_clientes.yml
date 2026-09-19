@@ -1,17 +1,15 @@
 models:
-  - name: stg_erp__clientes
-    description: Modelo de staging para clientes.
+  - name: int_dimensao_clientes
+    description: Modelo intermediário para clientes.
     columns:
       - name: pk_cliente
         description: Chave primária da tabela clientes.
-      - name: fk_localidade
-        description: Chave estrangeira para tabela localidades.
       - name: nome_cliente
         description: Nome do cliente obtido com primeiro e último nomes.
       - name: email_cliente
         description: Email do cliente.
       - name: tipo_cliente
-        description: "Tipo do cliente: PF ou PJ"
+        description: "Tipo do cliente: PF ou PJ."
       - name: ts_inclusao_cliente
         description: Timestamp de inclusão do cliente no sistema.
       - name: cpfcnpj_cliente
@@ -22,3 +20,7 @@ models:
         description: Endereço completo do cliente.
       - name: cep_cliente
         description: Código CEP do endereço do cliente.
+      - name: cidade_cliente
+        description: Cidade onde o cliente está localizado.
+      - name: uf_cliente
+        description: Código UF do estado onde o cliente está localizado.

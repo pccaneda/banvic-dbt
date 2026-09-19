@@ -1,0 +1,26 @@
+models:
+  - name: int_fato_transacoes
+    description: Modelo intermediário de fatos das transações.
+    columns:
+      - name: pk_transacao
+        description: Chave primária da tabela transacoes.
+      - name: fk_conta
+        description: Chave estrangeira para tabela agencias.
+      - name: fk_cliente
+        description: Chave estrangeira para tabela clientes.
+      - name: fk_agencia
+        description: Chave estrangeira para tabela agencias.
+      - name: fk_colaborador
+        description: Chave estrangeira para tabela colaborador.
+      - name: fk_data
+        description: Chave estrangeira para tabela de datas.
+      - name: data_transacao
+        description: Data de ocorrência da transação.
+      - name: ts_transacao
+        description: Timestamp de ocorrência da transação.
+      - name: nome_transacao
+        description: Nome da transação no sistema.
+      - name: tipo_transacao
+        description: "Tipo da transação: Débito ou Crédito."
+      - name: valor_transacao
+        description: Valor monetário da transação.
