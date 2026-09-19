@@ -1,6 +1,6 @@
 models:
-  - name: int_fato_transacoes
-    description: Modelo intermediário de fatos das transações.
+  - name: fct_transacoes
+    description: Tabela de fatos das transações.
     columns:
       - name: pk_transacao
         description: Chave primária da tabela transacoes.

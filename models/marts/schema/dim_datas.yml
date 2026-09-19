@@ -1,0 +1,20 @@
+models:
+  - name: dim_datas
+    description: Tabela dimensão de datas.
+    columns:
+      - name: pk_data
+        description: Chave primária da dimensão de datas, gerada por ordenação sequencial.
+      - name: dt_data
+        description: Data no formato 'yyyy-mm-dd'.
+      - name: dia
+        description: Dia do mês.
+      - name: mes
+        description: Mês do ano.
+      - name: ano
+        description: Ano da data.
+      - name: trimestre
+        description: Trimestre do ano.
+      - name: dia_da_semana
+        description: Dia da semana (1 - domingo, 7 - sábado)
+      - name: is_final_de_semana
+        description: Indicador booleano que identifica se a data é final de semana.

@@ -1,6 +1,6 @@
 models:
-  - name: int_fato_contas
-    description: Modelo intermediário de fatos das contas.
+  - name: fct_contas
+    description: Tabela de fatos das contas.
     columns:
       - name: pk_conta
         description: Chave primária da tabela contas.

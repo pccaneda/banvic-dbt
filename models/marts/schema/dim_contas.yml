@@ -1,0 +1,10 @@
+models:
+  - name: dim_contas
+    description: Tabela dimensão de contas.
+    columns:
+      - name: pk_conta
+        description: Chave primária da tabela contas.
+      - name: tipo_conta
+        description: "Tipo da conta, pessoa física ou jurídica."
+      - name: ts_abertura_conta
+        description: Timestamp da abertura da conta.
